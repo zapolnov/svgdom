@@ -459,6 +459,7 @@ jobs:
           myci-vcpkg-prepare.sh --git-ref ${{ github.sha }}
       - name: test vcpkg port
         run: |
+          export IGAGIS_TOOL_CONFIGS=https://github.com/${{ github.repository_owner }}/tool-configs
           cd vcpkg/test
           cmake .
           make
